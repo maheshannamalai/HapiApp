@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client/dist/socket.io.js"></script>
+</head>
+<body>
+    <form id="form">
+        <label for="message">Message</label><br>
+        <input type="text" id="message" name="message"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <button id="logout" onclick="window.location.href='/logout'">Logout</button>
+    <script>
+        const socket = io("ws://localhost:3001");
+
+        const form = document.getElementById('form');
+        const input = document.getElementById('message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (input.value.trim() !== '') {
+                socket.emit('message', input.value);
+                input.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
