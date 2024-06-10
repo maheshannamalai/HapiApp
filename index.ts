@@ -2,10 +2,16 @@ import Hapi from "@hapi/hapi";
 import Cookie from "@hapi/cookie";
 import { DataSource } from "typeorm";
 import Joi from "joi";
-import { validateUser } from "./queries";
+import {
+  getAllOrders,
+  getProductAndReviews,
+  postOrder,
+  validateUser,
+} from "./queries";
 import { Server } from "socket.io";
 import inert from "@hapi/inert";
-import cors from "hapi-modern-cors";
+import fs from "fs";
+import { join } from "path";
 
 const AppDataSource = new DataSource({
   type: "mssql",
@@ -18,7 +24,6 @@ const AppDataSource = new DataSource({
   options: {
     trustServerCertificate: true,
   },
-  synchronize: true,
 });
 
 AppDataSource.initialize()
@@ -33,11 +38,10 @@ const init = async () => {
   const server = Hapi.server({
     port: 3000,
     host: "localhost",
-  });
-
-  await server.register({
-    plugin: cors,
-    options: {},
+    tls: {
+      key: fs.readFileSync("key.pem"),
+      cert: fs.readFileSync("cert.pem"),
+    },
   });
 
   await server.register(Cookie);
@@ -100,12 +104,23 @@ const init = async () => {
 
   server.route({
     method: "GET",
-    path: "/",
+    path: "/chat1",
     options: {
       auth: "base",
     },
     handler: (request, h) => {
       return h.file("index.html");
+    },
+  });
+
+  server.route({
+    method: "GET",
+    path: "/chat2",
+    options: {
+      auth: "base",
+    },
+    handler: (request, h) => {
+      return h.file("index1.html");
     },
   });
 
@@ -126,10 +141,44 @@ const init = async () => {
 
   const io = new Server(3001);
   io.on("connection", (socket) => {
-    console.log("connected");
-    socket.on("message", (msg) => {
-      console.log("message: " + msg);
+    socket.on("join", () => {
+      console.log("Joining chatroom");
+      socket.join("chatroom");
     });
+
+    socket.on("message", (data) => {
+      socket.to("chatroom").emit("message", data);
+    });
+  });
+
+  server.route({
+    method: "GET",
+    path: "/pr",
+    handler: async (request, h) => {
+      const product = await getProductAndReviews(AppDataSource);
+      return JSON.stringify(product);
+    },
+  });
+
+  server.route({
+    method: "GET",
+    path: "/orders",
+    handler: async (request, h) => {
+      const orders = await getAllOrders(AppDataSource);
+      return JSON.stringify(orders);
+    },
+  });
+
+  server.route({
+    method: "POST",
+    path: "/orders",
+    handler: async (request, h) => {
+      const pid = parseInt(request.payload["pid"]);
+      const quantity = parseInt(request.payload["quantity"]);
+      const oid = parseInt(request.payload["oid"]);
+      await postOrder(AppDataSource, pid, quantity, oid);
+      return "order placed successfully";
+    },
   });
 
   await server.start();
