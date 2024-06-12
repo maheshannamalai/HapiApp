@@ -6,17 +6,19 @@ import {
   getAllOrders,
   getProductAndReviews,
   postOrder,
-  validateUser,
+  getUser,
 } from "./queries";
 import { Server } from "socket.io";
 import inert from "@hapi/inert";
 import fs from "fs";
-import { join } from "path";
+import bcrypt from "bcrypt";
+import { Users } from "./entities/User";
 
 const AppDataSource = new DataSource({
   type: "mssql",
   host: "localhost",
   port: 1433,
+  logging: true,
   username: "sa",
   password: "Mahesh@sa",
   database: "TestDB",
@@ -26,13 +28,27 @@ const AppDataSource = new DataSource({
   },
 });
 
-AppDataSource.initialize()
-  .then(() => {
-    console.log("Data Source has been initialized!");
-  })
-  .catch((err) => {
-    console.error("Error during Data Source initialization", err);
-  });
+AppDataSource.initialize().then(() => {
+  console.log("App Data Source has been initialized!");
+});
+
+// const dbeDataSource = new DataSource({
+//   type: "mssql",
+//   host: "localhost",
+//   port: 1433,
+//   username: "sa",
+//   password: "Mahesh@sa",
+//   database: "dbe",
+//   entities: ["entities/*"],
+//   options: {
+//     trustServerCertificate: true,
+//   },
+//   synchronize: true,
+// });
+
+// dbeDataSource.initialize().then(() => {
+//   console.log("Dbe Data Source has been initialized!");
+// });
 
 const init = async () => {
   const server = Hapi.server({
@@ -42,6 +58,12 @@ const init = async () => {
       key: fs.readFileSync("key.pem"),
       cert: fs.readFileSync("cert.pem"),
     },
+    routes: {
+      cors: {
+        origin: ["http://localhost:4000"],
+        credentials: true,
+      },
+    },
   });
 
   await server.register(Cookie);
@@ -50,22 +72,10 @@ const init = async () => {
   server.auth.strategy("base", "cookie", {
     cookie: {
       password: "123456789123456789123456789123456789",
-      isSecure: false,
       ttl: 24 * 60 * 60 * 1000,
+      isSecure: true,
     },
     redirectTo: "/login",
-    // validate: async (request, session) => {
-    //   const result = await validateUser(
-    //     session.name,
-    //     session.password,
-    //     AppDataSource
-    //   );
-    //   if (result) {
-    //     return { credentials: null, isValid: true };
-    //   } else {
-    //     return { isValid: false };
-    //   }
-    // },
   });
 
   server.route({
@@ -80,13 +90,16 @@ const init = async () => {
       },
     },
     handler: async (request, h) => {
-      const user = await validateUser(
-        request.payload["name"],
+      const user = await getUser(request.payload["name"], AppDataSource);
+      if (!user) {
+        return h.redirect("/login");
+      }
+      const result = await bcrypt.compare(
         request.payload["password"],
-        AppDataSource
+        user.password
       );
-      if (user) {
-        request.cookieAuth.set(user);
+      if (result === true) {
+        request.cookieAuth.set({ userId: user.id });
         return h.redirect("/");
       }
       return h.redirect("/login");
@@ -134,8 +147,56 @@ const init = async () => {
         Username: <input type="text" name="name"><br>
         Password: <input type="password" name="password"><br></a>
       <input type="submit" value="Login"></form>
+      <p>Click here to  <a href="/signup">sign up</a> <p>
       </body></html>
         `;
+    },
+  });
+
+  server.route({
+    method: "GET",
+    path: "/signup",
+    handler: (request, h) => {
+      return `
+      <html><head><title>Signup page</title></head><body>
+      <form method="post" action="/signup">
+        Username: <input type="text" name="name"><br>
+        Password: <input type="password" name="password"><br></a>
+      <input type="submit" value="Signup"></form>
+      </body></html>
+        `;
+    },
+  });
+
+  server.route({
+    method: "POST",
+    path: "/signup",
+    options: {
+      validate: {
+        payload: Joi.object({
+          name: Joi.string().required(),
+          password: Joi.string().min(6).max(30),
+        }),
+      },
+    },
+    handler: async (request, h) => {
+      const hash = await bcrypt.hash(request.payload["password"], 10);
+      const user = new Users();
+      user.name = request.payload["name"];
+      user.password = hash;
+      await AppDataSource.manager.save(user);
+      return h.redirect("/login");
+    },
+  });
+
+  server.route({
+    method: "GET",
+    path: "/",
+    options: {
+      auth: "base",
+    },
+    handler: (request, h) => {
+      return "You'r now logged in";
     },
   });
 
@@ -178,6 +239,23 @@ const init = async () => {
       const oid = parseInt(request.payload["oid"]);
       await postOrder(AppDataSource, pid, quantity, oid);
       return "order placed successfully";
+    },
+  });
+
+  // server.route({
+  //   method: "POST",
+  //   path: "/dbscript",
+  //   handler: async (request, h) => {
+  //     await dbscript(dbeDataSource);
+  //     return "done";
+  //   },
+  // });
+
+  server.route({
+    method: "GET",
+    path: "/check",
+    handler: async (request, h) => {
+      return "Hello, from port 3000";
     },
   });
 

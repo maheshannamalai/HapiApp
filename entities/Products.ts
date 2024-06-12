@@ -16,8 +16,8 @@ export class Products {
   price: number;
 
   @Column()
-  category: number;
+  category: string;
 
-  @OneToMany(() => Reviews, (reviews) => reviews.product_, { eager: true })
+  @OneToMany(() => Reviews, (reviews) => reviews.product_, { lazy: true })
   reviews: Reviews[];
 }
