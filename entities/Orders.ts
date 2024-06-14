@@ -2,21 +2,20 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToOne,
-  JoinColumn,
+  ManyToOne,
+  OneToMany,
 } from "typeorm";
-import { Reviews } from "./Reviews";
-import { Products } from "./Products";
+import { Users } from "./User";
+import { OrderItems } from "./OrderItems";
 
 @Entity()
 export class Orders {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  quantity: number;
+  @ManyToOne(() => Users, (users) => users.id)
+  placedBy: Users;
 
-  @OneToOne(() => Products)
-  @JoinColumn()
-  product_: Products;
+  @OneToMany(() => OrderItems, (orderitems) => orderitems.order)
+  ordersItems: OrderItems[];
 }

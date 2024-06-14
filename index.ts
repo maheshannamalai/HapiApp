@@ -2,55 +2,36 @@ import Hapi from "@hapi/hapi";
 import Cookie from "@hapi/cookie";
 import { DataSource } from "typeorm";
 import Joi from "joi";
-import {
-  getAllOrders,
-  getProductAndReviews,
-  postOrder,
-  getUser,
-} from "./queries";
+import { getAllOrders, getProductAndReviews, getUser } from "./queries";
 import { Server } from "socket.io";
 import inert from "@hapi/inert";
 import fs from "fs";
 import bcrypt from "bcrypt";
 import { Users } from "./entities/User";
+import { Products } from "./entities/Products";
+import { createClient } from "redis";
+import { Orders } from "./entities/Orders";
+import { badRequest } from "@hapi/boom";
 
 const AppDataSource = new DataSource({
   type: "mssql",
   host: "localhost",
   port: 1433,
-  logging: true,
   username: "sa",
   password: "Mahesh@sa",
-  database: "TestDB",
+  database: "dbe",
   entities: ["entities/*"],
   options: {
     trustServerCertificate: true,
   },
+  synchronize: true,
 });
 
 AppDataSource.initialize().then(() => {
   console.log("App Data Source has been initialized!");
 });
 
-// const dbeDataSource = new DataSource({
-//   type: "mssql",
-//   host: "localhost",
-//   port: 1433,
-//   username: "sa",
-//   password: "Mahesh@sa",
-//   database: "dbe",
-//   entities: ["entities/*"],
-//   options: {
-//     trustServerCertificate: true,
-//   },
-//   synchronize: true,
-// });
-
-// dbeDataSource.initialize().then(() => {
-//   console.log("Dbe Data Source has been initialized!");
-// });
-
-const init = async () => {
+export const init = async () => {
   const server = Hapi.server({
     port: 3000,
     host: "localhost",
@@ -66,6 +47,9 @@ const init = async () => {
     },
   });
 
+  const redisClient = await createClient()
+    .on("error", (err) => console.log("Redis Client Error", err))
+    .connect();
   await server.register(Cookie);
   await server.register(inert);
 
@@ -200,17 +184,17 @@ const init = async () => {
     },
   });
 
-  const io = new Server(3001);
-  io.on("connection", (socket) => {
-    socket.on("join", () => {
-      console.log("Joining chatroom");
-      socket.join("chatroom");
-    });
+  // const io = new Server(3001);
+  // io.on("connection", (socket) => {
+  //   socket.on("join", () => {
+  //     console.log("Joining chatroom");
+  //     socket.join("chatroom");
+  //   });
 
-    socket.on("message", (data) => {
-      socket.to("chatroom").emit("message", data);
-    });
-  });
+  //   socket.on("message", (data) => {
+  //     socket.to("chatroom").emit("message", data);
+  //   });
+  // });
 
   server.route({
     method: "GET",
@@ -224,32 +208,38 @@ const init = async () => {
   server.route({
     method: "GET",
     path: "/orders",
+    options: {
+      auth: "base",
+    },
     handler: async (request, h) => {
-      const orders = await getAllOrders(AppDataSource);
-      return JSON.stringify(orders);
+      const userId = request.query.userId;
+      if (!userId) {
+        return badRequest("User id missing!");
+      }
+      const cachedResult = await redisClient.get("order_" + userId);
+      if (!cachedResult) {
+        console.log("from db");
+        const orders = await AppDataSource.manager.find(Orders, {
+          where: {
+            placedBy: {
+              id: userId,
+            },
+          },
+          relations: {
+            ordersItems: true,
+          },
+        });
+        if (!orders) {
+          badRequest("No orders present for the given userId");
+        }
+        await redisClient.set("order_" + userId, JSON.stringify(orders));
+        return JSON.stringify(orders);
+      } else {
+        console.log("from cache");
+        return cachedResult;
+      }
     },
   });
-
-  server.route({
-    method: "POST",
-    path: "/orders",
-    handler: async (request, h) => {
-      const pid = parseInt(request.payload["pid"]);
-      const quantity = parseInt(request.payload["quantity"]);
-      const oid = parseInt(request.payload["oid"]);
-      await postOrder(AppDataSource, pid, quantity, oid);
-      return "order placed successfully";
-    },
-  });
-
-  // server.route({
-  //   method: "POST",
-  //   path: "/dbscript",
-  //   handler: async (request, h) => {
-  //     await dbscript(dbeDataSource);
-  //     return "done";
-  //   },
-  // });
 
   server.route({
     method: "GET",
@@ -261,6 +251,8 @@ const init = async () => {
 
   await server.start();
   console.log("Server running on %s", server.info.uri);
+
+  return server;
 };
 
 process.on("unhandledRejection", (err) => {
@@ -268,4 +260,4 @@ process.on("unhandledRejection", (err) => {
   process.exit(1);
 });
 
-init();
+// init();

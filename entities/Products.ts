@@ -18,6 +18,6 @@ export class Products {
   @Column()
   category: string;
 
-  @OneToMany(() => Reviews, (reviews) => reviews.product_, { lazy: true })
+  @OneToMany(() => Reviews, (reviews) => reviews.product)
   reviews: Reviews[];
 }

@@ -7,9 +7,9 @@
 </head>
 <body>
   <h1>CORS</h1>
-  <button id="fetchDataBtn">Fetch Data</button>
+  <button id="check">check</button>
   <script type="module">
-    document.getElementById('fetchDataBtn').addEventListener('click', async () => {
+    document.getElementById('check').addEventListener('click', async () => {
       try {
         const response = await fetch('https://localhost:3000/check');
         const data = await response;
