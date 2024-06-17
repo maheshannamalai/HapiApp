@@ -1,5 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+  ManyToOne,
+} from "typeorm";
 import { Reviews } from "./Reviews";
+import { Categories } from "./Categories";
+import { Carts } from "./Carts";
 
 @Entity()
 export class Products {
@@ -15,9 +23,12 @@ export class Products {
   @Column()
   price: number;
 
-  @Column()
-  category: string;
+  @ManyToOne(() => Categories, (categories) => categories.id)
+  category: Categories;
 
   @OneToMany(() => Reviews, (reviews) => reviews.product)
   reviews: Reviews[];
+
+  @OneToMany(() => Carts, (carts) => carts.product)
+  cart: Carts[];
 }

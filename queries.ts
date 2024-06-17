@@ -14,35 +14,6 @@ export const getUser = (name: string, ds: DataSource) => {
   });
 };
 
-export const getProductAndReviews = (ds: DataSource) => {
-  return new Promise<Products[]>(async (resolve) => {
-    // const product = await ds.manager.find(Products, {
-    //   relations: {
-    //     reviews: true,
-    //   },
-    // });
-    const product = await ds.manager.find(Products, {
-      relations: { reviews: true },
-    });
-    for (const p of product) {
-      await ds.manager.find(Reviews, {
-        where: {
-          product: p,
-        },
-      });
-    }
-
-    console.log("---------------------");
-
-    const productsWithReviews = await ds.manager
-      .createQueryBuilder(Products, "product")
-      .leftJoinAndSelect("product.reviews", "review")
-      .getMany();
-
-    resolve(product);
-  });
-};
-
 export const getAllOrders = (ds: DataSource) => {
   return new Promise<Orders[]>(async (resolve) => {
     const orders = await ds.manager.find(Orders, {
@@ -50,7 +21,6 @@ export const getAllOrders = (ds: DataSource) => {
         placedBy: true,
       },
     });
-    console.log(orders);
     resolve(orders);
   });
 };
