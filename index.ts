@@ -20,6 +20,7 @@ import { getAppDataSource } from "./AppDataSources";
 import { logger } from "./logger";
 import { createPlugin, getSummary, getContentType } from "@promster/hapi";
 import profiler from "v8";
+import validator from "validator";
 
 export const private_key = "maheshutd";
 
@@ -282,15 +283,18 @@ export const init = async (port: number) => {
           category: true,
         },
       };
-      if (request.query["sortByPrice"]) {
+      const sortByPrice = validator.escape(request.query["sortByPrice"]);
+      if (sortByPrice) {
         opt["order"] = { price: "ASC" };
       }
-      if (request.query["searchKey"]) {
-        opt["where"] = { name: Like(`%${request.query["searchKey"]}%`) };
+      const searchKey = validator.escape(request.query["searchKey"]);
+      if (searchKey) {
+        opt["where"] = { name: Like(`%${searchKey}%`) };
       }
-      if (request.query["category"]) {
+      const category = request.query["category"];
+      if (category) {
         opt["where"] = {
-          category: { name: Like(`%${request.query["category"]}%`) },
+          category: { name: Like(`%${category}%`) },
         };
       }
       const products = await AppDataSource.manager.find(Products, opt);
