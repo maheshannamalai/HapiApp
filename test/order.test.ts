@@ -11,7 +11,7 @@ describe("GET /orders", () => {
   let server;
 
   beforeEach(async () => {
-    server = await init();
+    server = await init(3001);
   });
 
   afterEach(async () => {

@@ -1,6 +1,6 @@
 import Hapi from "@hapi/hapi";
 import Cookie from "@hapi/cookie";
-import { DataSource } from "typeorm";
+import { DataSource, FindManyOptions, Like } from "typeorm";
 import Joi from "joi";
 import { Server } from "socket.io";
 import inert from "@hapi/inert";
@@ -266,9 +266,34 @@ export const init = async (port: number) => {
   server.route({
     method: "GET",
     path: "/products",
+    options: {
+      validate: {
+        query: Joi.object({
+          sortByPrice: Joi.bool().optional(),
+          searchKey: Joi.string().optional(),
+          category: Joi.string().optional(),
+        }),
+      },
+    },
     handler: async (request, h) => {
       const AppDataSource = getAppDataSource(location);
-      const products = await AppDataSource.manager.find(Products, {});
+      const opt: FindManyOptions<Products> = {
+        relations: {
+          category: true,
+        },
+      };
+      if (request.query["sortByPrice"]) {
+        opt["order"] = { price: "ASC" };
+      }
+      if (request.query["searchKey"]) {
+        opt["where"] = { name: Like(`%${request.query["searchKey"]}%`) };
+      }
+      if (request.query["category"]) {
+        opt["where"] = {
+          category: { name: Like(`%${request.query["category"]}%`) },
+        };
+      }
+      const products = await AppDataSource.manager.find(Products, opt);
       return products;
     },
   });
@@ -495,4 +520,4 @@ process.on("unhandledRejection", (err) => {
 });
 
 init(3001);
-// init(3005);
+//init(3005);

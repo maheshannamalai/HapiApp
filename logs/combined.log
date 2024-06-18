@@ -49,3 +49,170 @@
 {"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:02:23"}
 {"level":"info","message":"Cache miss for product","timestamp":"2024-06-17 17:02:42"}
 {"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-17 17:02:42"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-17 17:10:10"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-17 17:10:10"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-17 17:10:10"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Cache hit for user order","timestamp":"2024-06-17 17:10:54"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 09:35:09"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 09:35:09"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 09:35:09"}
+{"level":"info","message":"Cache hit for product","timestamp":"2024-06-18 09:35:47"}
+{"level":"info","message":"Cache hit for product","timestamp":"2024-06-18 09:35:49"}
+{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":false,"level":"info","operator":"==","timestamp":"2024-06-18 10:22:38"}
+{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":false,"level":"info","operator":"==","timestamp":"2024-06-18 10:22:54"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 10:23:23"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 10:23:23"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 10:23:23"}
+{"address":"127.0.0.1","code":"EADDRINUSE","errno":-98,"level":"info","port":3001,"syscall":"listen","timestamp":"2024-06-18 10:24:20"}
+{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":false,"level":"info","operator":"==","timestamp":"2024-06-18 10:25:00"}
+{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":false,"level":"info","operator":"==","timestamp":"2024-06-18 10:25:35"}
+{"address":"127.0.0.1","code":"EADDRINUSE","errno":-98,"level":"info","port":3001,"syscall":"listen","timestamp":"2024-06-18 10:25:48"}
+{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":false,"level":"info","operator":"==","timestamp":"2024-06-18 10:26:19"}
+{"address":"127.0.0.1","code":"EADDRINUSE","errno":-98,"level":"info","port":3001,"syscall":"listen","timestamp":"2024-06-18 10:26:33"}
+{"address":"127.0.0.1","code":"EADDRINUSE","errno":-98,"level":"info","port":3001,"syscall":"listen","timestamp":"2024-06-18 10:26:52"}
+{"level":"info","message":"Server started on http://localhost:3005","timestamp":"2024-06-18 10:27:19"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 10:27:19"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 10:27:19"}
+{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":false,"level":"info","operator":"==","timestamp":"2024-06-18 10:28:49"}
+{"level":"info","message":"Server started on http://localhost:3005","timestamp":"2024-06-18 10:29:06"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 10:29:06"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 10:29:06"}
+{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":false,"level":"info","operator":"==","timestamp":"2024-06-18 10:30:56"}
+{"level":"info","message":"Server started on http://localhost:3005","timestamp":"2024-06-18 10:31:19"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 10:31:19"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 10:31:19"}
+{"level":"info","message":"Server started on http://localhost:3005","timestamp":"2024-06-18 10:32:29"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 10:32:29"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 10:32:29"}
+{"level":"info","timestamp":"2024-06-18 10:32:46"}
+{"address":"127.0.0.1","code":"EADDRINUSE","errno":-98,"level":"info","port":3001,"syscall":"listen","timestamp":"2024-06-18 10:32:55"}
+{"level":"info","message":"Server started on http://localhost:3005","timestamp":"2024-06-18 10:33:08"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 10:33:09"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 10:33:09"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 10:34:20"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 10:34:20"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 10:34:20"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:34:26"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:34:48"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:35:13"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 10:35:44"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 10:35:44"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 10:35:44"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:35:46"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:35:48"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:36:05"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:36:06"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:36:15"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:36:18"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 10:37:01"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 10:37:01"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 10:37:01"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:38:24"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:38:28"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:38:34"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 10:43:24"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 10:43:24"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 10:43:24"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:43:26"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:43:45"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:44:05"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:44:11"}
