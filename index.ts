@@ -1,30 +1,32 @@
 import Hapi from "@hapi/hapi";
 import Cookie from "@hapi/cookie";
-import { DataSource, FindManyOptions, Like } from "typeorm";
+import { FindManyOptions, Like } from "typeorm";
 import Joi from "joi";
-import { Server } from "socket.io";
 import inert from "@hapi/inert";
-import fs from "fs";
 import bcrypt from "bcrypt";
 import { Users } from "./entities/User";
-import { Products } from "./entities/Products";
 import { createClient } from "redis";
 import { Orders } from "./entities/Orders";
-import { badRequest, unauthorized } from "@hapi/boom";
+import { badRequest } from "@hapi/boom";
 import amqplib from "amqplib";
 import jwt from "jsonwebtoken";
-import { Carts } from "./entities/Carts";
 import { jwtscheme } from "./jwtValidateScheme";
 import HapiRateLimit from "hapi-rate-limit";
 import { getAppDataSource } from "./AppDataSources";
 import { logger } from "./logger";
 import { createPlugin, getSummary, getContentType } from "@promster/hapi";
-import profiler from "v8";
-import validator from "validator";
+import productRoutes from "./routes/products";
+import cartRoutes from "./routes/carts";
+import chatsRoutes from "./routes/chats";
+import { findCouponByCodeAndDate } from "./utils";
 
 export const private_key = "maheshutd";
 
-const location = "USA";
+export const location = "USA";
+
+export const redisClient = createClient();
+// .on("error", (err) => console.log("Redis Client Error", err))
+redisClient.connect();
 
 export const init = async (port: number) => {
   const server = Hapi.server({
@@ -41,10 +43,6 @@ export const init = async (port: number) => {
       },
     },
   });
-
-  const redisClient = await createClient()
-    .on("error", (err) => console.log("Redis Client Error", err))
-    .connect();
 
   await server.register(Cookie);
   await server.register(inert);
@@ -115,28 +113,6 @@ export const init = async (port: number) => {
       request.cookieAuth.clear();
       logger.info("User logged out");
       return h.redirect("/login");
-    },
-  });
-
-  server.route({
-    method: "GET",
-    path: "/chat1",
-    options: {
-      auth: "base",
-    },
-    handler: (request, h) => {
-      return h.file("index.html");
-    },
-  });
-
-  server.route({
-    method: "GET",
-    path: "/chat2",
-    options: {
-      auth: "base",
-    },
-    handler: (request, h) => {
-      return h.file("index1.html");
     },
   });
 
@@ -266,204 +242,31 @@ export const init = async (port: number) => {
 
   server.route({
     method: "GET",
-    path: "/products",
-    options: {
-      validate: {
-        query: Joi.object({
-          sortByPrice: Joi.bool().optional(),
-          searchKey: Joi.string().optional(),
-          category: Joi.string().optional(),
-        }),
-      },
-    },
-    handler: async (request, h) => {
-      const AppDataSource = getAppDataSource(location);
-      const opt: FindManyOptions<Products> = {
-        relations: {
-          category: true,
-        },
-      };
-      const sortByPrice = validator.escape(request.query["sortByPrice"]);
-      if (sortByPrice) {
-        opt["order"] = { price: "ASC" };
-      }
-      const searchKey = validator.escape(request.query["searchKey"]);
-      if (searchKey) {
-        opt["where"] = { name: Like(`%${searchKey}%`) };
-      }
-      const category = request.query["category"];
-      if (category) {
-        opt["where"] = {
-          category: { name: Like(`%${category}%`) },
-        };
-      }
-      const products = await AppDataSource.manager.find(Products, opt);
-      return products;
-    },
-  });
-
-  server.route({
-    method: "GET",
-    path: "/products/{id}",
-    options: {
-      auth: "jwtvalidate",
-      validate: {
-        params: Joi.object({
-          id: Joi.number().required(),
-        }),
-      },
-    },
-    handler: async (request, h) => {
-      try {
-        const id = request.params.id;
-        const cachedResult = await redisClient.get(location + "_product_" + id);
-        if (!cachedResult) {
-          logger.info("Cache miss for product");
-          const AppDataSource = getAppDataSource(location);
-          const product = await AppDataSource.manager.findOne(Products, {
-            where: {
-              id,
-            },
-            relations: {
-              category: true,
-            },
-          });
-          if (!product) {
-            return badRequest("No such product present");
-          }
-          await redisClient.set(
-            location + "_product_" + id,
-            JSON.stringify(product)
-          );
-          return product;
-        } else {
-          logger.info("Cache hit for product");
-          return JSON.parse(cachedResult);
-        }
-      } catch (err) {
-        logger.error(err);
-        return err;
-      }
-    },
-  });
-
-  server.route({
-    method: "POST",
-    path: "/cart",
-    options: {
-      auth: "jwtvalidate",
-      validate: {
-        query: Joi.object({
-          id: Joi.number().required(),
-        }),
-      },
-    },
-    handler: async (request, h) => {
-      const id = request.query.id;
-      const cachedResult = await redisClient.get(location + "_product_" + id);
-      let product: Products;
-      if (!cachedResult) {
-        logger.info("Cache miss for product");
-        const AppDataSource = getAppDataSource(location);
-        product = await AppDataSource.manager.findOne(Products, {
-          where: {
-            id,
-          },
-        });
-        if (!product) {
-          return badRequest("No such product present");
-        }
-        await redisClient.set(
-          location + "_product_" + id,
-          JSON.stringify(product)
-        );
-      } else {
-        logger.info("Cache hit for product");
-        product = JSON.parse(cachedResult) as Products;
-      }
-      if (product.stock <= 0) {
-        logger.info("No stocks avaialable");
-        return "No stocks available!";
-      }
-      const userId = parseInt(request.auth.credentials.userId as string);
-      const AppDataSource = getAppDataSource(location);
-      const user = await AppDataSource.manager.findOneBy(Users, { id: userId });
-      const item = await AppDataSource.manager.findOne(Carts, {
-        where: {
-          user: user,
-          product,
-        },
-      });
-      if (!item) {
-        const cart = new Carts();
-        cart.product = product;
-        cart.user = user;
-        cart.quantity = 1;
-        await AppDataSource.manager.save(cart);
-      } else {
-        item.quantity += 1;
-        await AppDataSource.manager.save(item);
-      }
-      return "Added successfully to cart";
-    },
-  });
-
-  server.route({
-    method: "DELETE",
-    path: "/cart/{id}",
-    options: {
-      auth: "jwtvalidate",
-      validate: {
-        params: Joi.object({
-          id: Joi.number().required(),
-        }),
-      },
-    },
-    handler: async (request, h) => {
-      const id = request.params.id;
-      const AppDataSource = getAppDataSource(location);
-      const cart = await AppDataSource.manager.findOneBy(Carts, { id });
-      await AppDataSource.manager.remove(cart);
-      return "Item deleted from cart";
-    },
-  });
-
-  server.route({
-    method: "GET",
-    path: "/cart",
-    options: {
-      auth: "jwtvalidate",
-    },
-    handler: async (request, h) => {
-      const userId = parseInt(request.auth.credentials.userId as string);
-      const AppDataSource = getAppDataSource(location);
-      const carts = await AppDataSource.manager.find(Carts, {
-        where: {
-          user: {
-            id: userId,
-          },
-        },
-        relations: {
-          product: true,
-        },
-      });
-      return carts;
-    },
-  });
-
-  server.route({
-    method: "GET",
     path: "/checkout",
     options: {
       auth: "jwtvalidate",
+      validate: {
+        query: Joi.object({
+          coupon: Joi.string().optional(),
+        }),
+      },
     },
     handler: async (request, h) => {
       const queue = "orders";
       const conn = await amqplib.connect("amqp://localhost");
-
+      let couponId = "";
+      if (request.query["coupon"]) {
+        const result = await findCouponByCodeAndDate(request.query["coupon"]);
+        if (!result) {
+          return badRequest("Invalid coupon code");
+        }
+        result.used = true;
+        await getAppDataSource(location).manager.save(result);
+        couponId = result.id + "";
+      }
       const ch = await conn.createChannel();
       const userId = request.auth.credentials.userId;
-      ch.sendToQueue(queue, Buffer.from(userId + ""));
+      ch.sendToQueue(queue, Buffer.from(userId + " " + couponId));
       logger.info("Order process pushed to queue for the user: " + userId);
       return "order placed successfully";
     },
@@ -510,6 +313,8 @@ export const init = async (port: number) => {
       return h.response(await getSummary()).type(getContentType());
     },
   });
+
+  server.route([...productRoutes, ...cartRoutes, ...chatsRoutes]);
 
   await server.start();
   logger.info("Server started on " + server.info.uri);

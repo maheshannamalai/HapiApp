@@ -216,3 +216,182 @@
 {"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:43:45"}
 {"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:44:05"}
 {"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 10:44:11"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 15:09:05"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 15:09:05"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 15:09:05"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:06"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 15:09:16"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 15:12:38"}
+{"level":"info","message":"User logged in: [object Object]","timestamp":"2024-06-18 15:12:38"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 16:13:38"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 16:13:38"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 16:13:38"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 16:14:45"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 16:15:57"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 16:15:57"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 16:15:57"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 16:16:41"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-18 16:16:52"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 16:18:17"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 16:18:17"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 16:18:17"}
+{"expiredAt":"2024-06-18T14:40:27.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError","timestamp":"2024-06-18 16:18:33"}
+{"level":"info","message":"Cache hit for product","timestamp":"2024-06-18 16:19:58"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 16:21:59"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 16:21:59"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 16:21:59"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 16:22:09"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 16:22:09"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 16:22:09"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 16:38:18"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 16:38:18"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 16:38:18"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 16:39:20"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 16:39:21"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 16:39:21"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 16:40:29"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 16:40:29"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 16:40:29"}
+{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":false,"level":"info","operator":"==","timestamp":"2024-06-18 17:05:45"}
+{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":false,"level":"info","operator":"==","timestamp":"2024-06-18 17:06:22"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 17:06:56"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 17:06:56"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 17:06:56"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 17:11:09"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 17:11:09"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 17:11:09"}
+{"level":"error","timestamp":"2024-06-18 17:11:13"}
+{"level":"error","timestamp":"2024-06-18 17:11:18"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 17:12:30"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 17:12:31"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 17:12:31"}
+{"level":"error","timestamp":"2024-06-18 17:12:33"}
+{"level":"error","timestamp":"2024-06-18 17:12:36"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 17:13:10"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 17:13:10"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 17:13:10"}
+{"level":"error","timestamp":"2024-06-18 17:13:11"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 17:13:59"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 17:13:59"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 17:13:59"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 17:14:51"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 17:14:51"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 17:14:51"}
+{"level":"error","timestamp":"2024-06-18 17:14:54"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 17:16:03"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 17:16:03"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 17:16:03"}
+{"level":"error","timestamp":"2024-06-18 17:16:04"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 17:17:57"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 17:17:57"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 17:17:57"}
+{"level":"error","timestamp":"2024-06-18 17:18:00"}
+{"level":"error","timestamp":"2024-06-18 17:18:01"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-18 17:24:55"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-18 17:24:55"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-18 17:24:55"}
+{"level":"error","timestamp":"2024-06-18 17:24:57"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-19 00:54:43"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-19 00:54:44"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-19 00:54:44"}
+{"level":"info","message":"Cache hit for product","timestamp":"2024-06-19 00:54:49"}
+{"level":"info","message":"Cache hit for product","timestamp":"2024-06-19 00:54:50"}
+{"level":"info","message":"Cache hit for product","timestamp":"2024-06-19 00:54:51"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-19 00:58:03"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-19 00:58:03"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-19 00:58:03"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-19 00:58:13"}
+{"level":"info","message":"Cache hit for product","timestamp":"2024-06-19 00:58:23"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-19 00:58:23"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-19 00:58:29"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-19 01:19:54"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-19 01:19:54"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-19 01:19:54"}
+{"level":"info","message":"Order process pushed to queue for the user: 1","timestamp":"2024-06-19 01:20:03"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-19 01:20:23"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-19 01:20:27"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-19 01:30:46"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-19 01:30:46"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-19 01:31:48"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-19 01:31:48"}
+{"class":16,"code":"EREQUEST","driverError":{"class":16,"code":"EREQUEST","lineNumber":1,"name":"RequestError","number":4901,"originalError":{"info":{"class":16,"handlerName":"onErrorMessage","lineNumber":1,"message":"ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition specified, or the column being added is an identity or timestamp column, or alternatively if none of the previous conditions are satisfied the table must be empty to allow addition of this column. Column 'totalPrice' cannot be added to non-empty table 'orders' because it does not satisfy these conditions.","name":"ERROR","number":4901,"procName":"","serverName":"Mahesh","state":1}},"precedingErrors":[],"procName":"","serverName":"Mahesh","state":1},"level":"info","lineNumber":1,"number":4901,"originalError":{"info":{"class":16,"handlerName":"onErrorMessage","lineNumber":1,"message":"ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition specified, or the column being added is an identity or timestamp column, or alternatively if none of the previous conditions are satisfied the table must be empty to allow addition of this column. Column 'totalPrice' cannot be added to non-empty table 'orders' because it does not satisfy these conditions.","name":"ERROR","number":4901,"procName":"","serverName":"Mahesh","state":1}},"precedingErrors":[],"procName":"","query":"ALTER TABLE \"orders\" ADD \"totalPrice\" int NOT NULL","serverName":"Mahesh","state":1,"timestamp":"2024-06-19 01:31:48"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-19 01:31:54"}
+{"class":16,"code":"EREQUEST","driverError":{"class":16,"code":"EREQUEST","lineNumber":1,"name":"RequestError","number":4901,"originalError":{"info":{"class":16,"handlerName":"onErrorMessage","lineNumber":1,"message":"ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition specified, or the column being added is an identity or timestamp column, or alternatively if none of the previous conditions are satisfied the table must be empty to allow addition of this column. Column 'totalPrice' cannot be added to non-empty table 'orders' because it does not satisfy these conditions.","name":"ERROR","number":4901,"procName":"","serverName":"Mahesh","state":1}},"precedingErrors":[],"procName":"","serverName":"Mahesh","state":1},"level":"info","lineNumber":1,"number":4901,"originalError":{"info":{"class":16,"handlerName":"onErrorMessage","lineNumber":1,"message":"ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition specified, or the column being added is an identity or timestamp column, or alternatively if none of the previous conditions are satisfied the table must be empty to allow addition of this column. Column 'totalPrice' cannot be added to non-empty table 'orders' because it does not satisfy these conditions.","name":"ERROR","number":4901,"procName":"","serverName":"Mahesh","state":1}},"precedingErrors":[],"procName":"","query":"ALTER TABLE \"orders\" ADD \"totalPrice\" int NOT NULL","serverName":"Mahesh","state":1,"timestamp":"2024-06-19 01:31:54"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-19 01:33:45"}
+{"class":16,"code":"EREQUEST","driverError":{"class":16,"code":"EREQUEST","lineNumber":1,"name":"RequestError","number":4901,"originalError":{"info":{"class":16,"handlerName":"onErrorMessage","lineNumber":1,"message":"ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition specified, or the column being added is an identity or timestamp column, or alternatively if none of the previous conditions are satisfied the table must be empty to allow addition of this column. Column 'totalamount' cannot be added to non-empty table 'orders' because it does not satisfy these conditions.","name":"ERROR","number":4901,"procName":"","serverName":"Mahesh","state":1}},"precedingErrors":[],"procName":"","serverName":"Mahesh","state":1},"level":"info","lineNumber":1,"number":4901,"originalError":{"info":{"class":16,"handlerName":"onErrorMessage","lineNumber":1,"message":"ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition specified, or the column being added is an identity or timestamp column, or alternatively if none of the previous conditions are satisfied the table must be empty to allow addition of this column. Column 'totalamount' cannot be added to non-empty table 'orders' because it does not satisfy these conditions.","name":"ERROR","number":4901,"procName":"","serverName":"Mahesh","state":1}},"precedingErrors":[],"procName":"","query":"ALTER TABLE \"orders\" ADD \"totalamount\" int NOT NULL","serverName":"Mahesh","state":1,"timestamp":"2024-06-19 01:33:45"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-19 01:37:23"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-19 01:37:23"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-19 01:37:23"}
+{"level":"info","message":"Server started on http://localhost:3001","timestamp":"2024-06-19 01:38:19"}
+{"level":"info","message":"App Data Source 2 has been initialized!","timestamp":"2024-06-19 01:38:20"}
+{"level":"info","message":"App Data Source 1 has been initialized!","timestamp":"2024-06-19 01:38:20"}
+{"level":"info","message":"Inside getAppDataSource","timestamp":"2024-06-19 01:38:32"}
+{"level":"info","message":"Order process pushed to queue for the user: 1","timestamp":"2024-06-19 01:38:50"}
+{"level":"info","message":"Order process pushed to queue for the user: 1","timestamp":"2024-06-19 01:40:37"}

@@ -7,6 +7,7 @@ import { OrderItems } from "./entities/OrderItems";
 import { Orders } from "./entities/Orders";
 import { Users } from "./entities/User";
 import { createClient } from "redis";
+import { Coupons } from "./entities/Coupons";
 
 const AppDataSource = new DataSource({
   type: "mssql",
@@ -77,7 +78,8 @@ const init = async () => {
     if (msg !== null) {
       console.log("Received:", msg.content.toString());
       ch.ack(msg);
-      const userId = parseInt(msg.content.toString());
+      const [userIdStr, couponIdStr] = msg.content.toString().split(" ");
+      const userId = parseInt(userIdStr);
       const user = await AppDataSource.manager.findOneBy(Users, { id: userId });
       const carts = await AppDataSource.manager.find(Carts, {
         where: {
@@ -92,9 +94,11 @@ const init = async () => {
       }
       const order = new Orders();
       order.placedBy = user;
+      order.totalamount = 0;
       const placedOrder = await AppDataSource.manager.save(order);
       redisClient.del("order_" + userId);
       console.log(placedOrder);
+      order.totalamount = 0;
       for (let cart of carts) {
         const item = new OrderItems();
         item.order = placedOrder;
@@ -103,11 +107,21 @@ const init = async () => {
         item.price = cart.product.price * cart.quantity;
         const product = cart.product;
         product.stock -= cart.quantity;
+        order.totalamount += item.price;
         await AppDataSource.manager.save(product);
         await redisClient.del("product_" + product.id);
         await AppDataSource.manager.save(item);
         await AppDataSource.manager.remove(cart);
       }
+      if (couponIdStr != "") {
+        const couponId = parseInt(couponIdStr);
+        const coupon = await AppDataSource.manager.findOneBy(Coupons, {
+          id: couponId,
+        });
+        order.totalamount -= order.totalamount * (coupon.percent / 100);
+      }
+      await AppDataSource.manager.save(order);
+      redisClient.del("order_" + userId);
     } else {
       console.log("Consumer cancelled by server");
     }

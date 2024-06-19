@@ -4,9 +4,12 @@ import {
   Column,
   ManyToOne,
   OneToMany,
+  OneToOne,
+  JoinColumn,
 } from "typeorm";
 import { Users } from "./User";
 import { OrderItems } from "./OrderItems";
+import { Coupons } from "./Coupons";
 
 @Entity()
 export class Orders {
@@ -18,4 +21,7 @@ export class Orders {
 
   @OneToMany(() => OrderItems, (orderitems) => orderitems.order)
   ordersItems: OrderItems[];
+
+  @Column()
+  totalamount: number;
 }
