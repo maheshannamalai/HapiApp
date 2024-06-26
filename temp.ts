@@ -8,6 +8,14 @@ import { Orders } from "./entities/Orders";
 import { Users } from "./entities/User";
 import { createClient } from "redis";
 import { Coupons } from "./entities/Coupons";
+// import profiler from "v8-profiler-node8";
+
+// profiler.startProfiling("", true);
+// setTimeout(function () {
+//   var profile = profiler.stopProfiling("");
+//   console.log(profile);
+//   profiler.deleteAllProfiles();
+// }, 1000);
 
 const AppDataSource = new DataSource({
   type: "mssql",

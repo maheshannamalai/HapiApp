@@ -19,6 +19,8 @@ import productRoutes from "./routes/products";
 import cartRoutes from "./routes/carts";
 import chatsRoutes from "./routes/chats";
 import { findCouponByCodeAndDate } from "./utils";
+import profiler from "v8-profiler-node8";
+import fs from "fs";
 
 export const private_key = "maheshutd";
 
@@ -27,6 +29,16 @@ export const location = "USA";
 export const redisClient = createClient();
 // .on("error", (err) => console.log("Redis Client Error", err))
 redisClient.connect();
+
+profiler.startProfiling("", true);
+setTimeout(function () {
+  var profile = profiler.stopProfiling("");
+  profile.export(function (error, result) {
+    fs.writeFileSync("profile.json", result);
+    profile.delete();
+  });
+  profiler.deleteAllProfiles();
+}, 5000);
 
 export const init = async (port: number) => {
   const server = Hapi.server({

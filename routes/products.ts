@@ -31,14 +31,14 @@ const productRoutes: ServerRoute[] = [
       if (request.query["sortByPrice"]) {
         opt["order"] = { price: "ASC" };
       }
-      const searchKey = validator.escape(request.query["searchKey"]);
+      const searchKey = request.query["searchKey"];
       if (searchKey) {
-        opt["where"] = { name: Like(`%${searchKey}%`) };
+        opt["where"] = { name: Like(`%${validator.escape(searchKey)}%`) };
       }
       const category = request.query["category"];
       if (category) {
         opt["where"] = {
-          category: { name: Like(`%${category}%`) },
+          category: { name: Like(`%${validator.escape(category)}%`) },
         };
       }
       const products = await AppDataSource.manager.find(Products, opt);
