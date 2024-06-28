@@ -1,6 +1,5 @@
 import Hapi from "@hapi/hapi";
 import Cookie from "@hapi/cookie";
-import { FindManyOptions, Like } from "typeorm";
 import Joi from "joi";
 import inert from "@hapi/inert";
 import bcrypt from "bcrypt";
